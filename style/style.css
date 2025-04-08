@@ -9,25 +9,12 @@ body {
 
 .container {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
   position: relative;
   overflow: hidden;
-}
-
-.container div.six {
-  top: 10vh;
-  z-index: 1;
-}
-
-.container div.seven,
-.container div.eight {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
 }
 
 .container > div {
@@ -114,12 +101,27 @@ body {
 
 .six {
   position: relative;
+  padding-bottom: 3rem;
+  top: 10vh;
+  z-index: 1;
 }
 
-.six img {
-  display: inline-block;
-  max-width: 100%;
+.six img.lydia-dp {
+  width: 40vw;
+  max-width: 300px;
   height: auto;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.six .caption-text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  z-index: 2;
+  position: relative;
 }
 
 .six .hat {
@@ -127,7 +129,7 @@ body {
   width: 80px;
   top: -35px;
   left: 41.5%;
-  /* transform: scale(0.1); */
+  display: none; /* hide the hat if not needed */
 }
 
 .baloons img {
@@ -145,6 +147,14 @@ body {
 
 .baloons img:nth-child(3n + 0) {
   left: 30%;
+}
+
+.seven,
+.eight {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
 }
 
 .eight svg {
@@ -279,9 +289,12 @@ body {
     font-size: 10rem;
   }
 
-  .six .hat {
-    width: 50px;
-    top: -20px;
+  .six img.lydia-dp {
+    width: 80vw;
+  }
+
+  .six .caption-text {
+    font-size: 1rem;
   }
 
   .wish-hbd {
